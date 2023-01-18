@@ -1,0 +1,32 @@
+
+    <button class="btn btn-primary ms-2" style="float:right; ">
+        <a routerLink="/dashboard" style="color: white"> Back</a> 
+    </button>
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-7"><table class="table table-hover table-bordered data">
+      <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Event Name</th>
+
+                <th></th>
+            </tr>
+      </thead>
+      <tbody>
+            <tr *ngFor="let i of events;let k=index">
+                <td>{{k+1}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.time}}</td>
+                <td>{{i.event}}</td>
+                <td><button class="btn btn-primary">Edit</button>
+                    <button (click)="removeEvent(k)" class="btn btn-danger delete-button ms-2">Delete</button></td>
+               
+            </tr>
+      </tbody>
+    </table></div>
+    <div class="col-4"></div>
+</div>
